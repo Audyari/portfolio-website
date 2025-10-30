@@ -1,59 +1,55 @@
 # Project Context
 
 ## Purpose
-Portofolio website pribadi yang menampilkan proyek, blog, dan informasi kontak. Dibangun dengan teknologi modern untuk performa dan pengalaman pengguna yang optimal.
+Membangun portfolio website pribadi yang modern dan interaktif untuk menampilkan proyek, keterampilan, dan pengalaman profesional.
 
 ## Tech Stack
 - Next.js (App Router)
 - TypeScript
 - React 18
 - Tailwind CSS
-- MDX (untuk konten blog)
-- Vercel (deployment)
+- Geist UI
+- Vercel Analytics & Speed Insights
+- MDX untuk konten blog
 
 ## Project Conventions
 
 ### Code Style
-- Gunakan TypeScript untuk type safety
-- Komponen React menggunakan fungsi, bukan class
-- Nama komponen menggunakan PascalCase
-- Nama file komponen menggunakan PascalCase
-- Gunakan ESLint dan Prettier untuk konsistensi kode
-- Gunakan arrow functions untuk komponen
-- Gunakan interface untuk tipe props
+- Menggunakan TypeScript dengan konfigurasi ketat
+- Komponen React menggunakan functional components dengan TypeScript
+- Penamaan komponen menggunakan PascalCase
+- Hooks dan fungsi menggunakan camelCase
+- Menggunakan ESLint dan Prettier untuk konsistensi kode
 
 ### Architecture Patterns
-- App Router dari Next.js untuk routing
-- Komponen yang dapat digunakan ulang di folder `components/`
+- Menggunakan App Router dari Next.js untuk routing
+- Komponen UI yang dapat digunakan kembali di folder `components/`
 - Halaman statis untuk performa optimal
-- Server Components untuk komponen yang tidak membutuhkan interaktivitas
-- Client Components untuk komponen yang membutuhkan interaktivitas
+- Menggunakan Server Components untuk performa yang lebih baik
 
 ### Testing Strategy
-- Gunakan testing library untuk komponen React
-- Tes integrasi untuk halaman utama
-- End-to-end testing untuk alur kritis
+- Pengujian komponen dengan React Testing Library
+- Pengujian integrasi untuk alur utama
+- Mengutamakan pengujian komponen kritis
 
 ### Git Workflow
-- Gunakan Conventional Commits
-- Branch naming: `feature/nama-fitur`, `bugfix/nama-perbaikan`
-- Pull Request dengan deskripsi yang jelas
-- Code review sebelum merge ke main
+- Menggunakan Git Flow untuk manajemen cabang
+- Format pesan commit: `type(scope): deskripsi`
+- Contoh: `feat(header): add responsive navigation`
+- Tipe commit: feat, fix, docs, style, refactor, test, chore
 
 ## Domain Context
-- Website ini berfokus pada portofolio pribadi
-- Memiliki bagian blog untuk berbagi pengetahuan
-- Menampilkan proyek-proyek yang telah dikerjakan
-- Memiliki halaman kontak untuk kolaborasi
+- Website ini berfokus pada portofolio pengembangan web
+- Menampilkan proyek, keterampilan, dan pengalaman profesional
+- Blog untuk berbagi pengetahuan dan tutorial
 
 ## Important Constraints
-- Harus mobile-friendly
-- Performa harus optimal (scor tinggi di Lighthouse)
-- Aksesibilitas (a11y) harus diperhatikan
-- SEO friendly
+- Harus mobile-friendly dan aksesibel
+- Performa harus optimal (Lighthouse score tinggi)
+- Konten harus mudah diupdate
 
 ## External Dependencies
-- Vercel Analytics dan Speed Insights
-- Geist Font
-- Next.js MDX Remote untuk rendering konten MDX
-- Sugar High untuk syntax highlighting
+- Vercel untuk hosting dan deployment
+- Vercel Analytics untuk analitik
+- Vercel Speed Insights untuk monitoring performa
+- Geist UI untuk komponen antarmuka pengguna
