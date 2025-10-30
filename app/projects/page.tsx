@@ -16,7 +16,7 @@ const allProjects = [
     id: '2',
     title: '🎯 LOGSPOT App',
     description: 'LogSpot adalah aplikasi web modern untuk mencatat dan mengelola aktivitas harian dengan antarmuka yang sederhana dan mudah digunakan. Dibangun dengan Vue 3, Vite, dan Tailwind CSS.',
-    image: '/images/LogSpot.jpg',
+    image: '/images/LogSpot.JPG',
     technologies: ['Vue 3', 'Vite', 'Pinia','Vue Router','Headless UI','Tailwind CSS', 'Heroicons'],
     slug: 'https://logspot-gamma.vercel.app/',
   },

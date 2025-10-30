@@ -7,7 +7,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './global.css'
 
 export const metadata: Metadata = {
-  title: 'Portfolio - Your Name',
+  title: 'Portfolio - Audyari Wiyono',
   description: 'Personal portfolio showcasing web development projects and experience',
 }
 

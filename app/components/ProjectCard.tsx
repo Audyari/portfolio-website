@@ -50,7 +50,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
         
         <Link
-          href={`/projects/${project.slug}`}
+          href={`${project.slug}`}
           className="text-primary-600 hover:text-primary-700 font-medium text-sm inline-flex items-center gap-1"
         >
           View Project
