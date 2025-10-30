@@ -10,6 +10,9 @@ const navItems = {
   'https://vercel.com/templates/next.js/portfolio-starter-kit': {
     name: 'deploy',
   },
+  '/admin/login': {
+    name: 'admin', // 🎯 Tampilkan aja, yang penting password aman!
+  },
 }
 
 export function Navbar() {

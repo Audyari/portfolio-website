@@ -1,55 +1,68 @@
 # Project Context
 
 ## Purpose
-Membangun portfolio website pribadi yang modern dan interaktif untuk menampilkan proyek, keterampilan, dan pengalaman profesional.
+Personal portfolio website to showcase projects, blog posts, and professional information. The site serves as a digital resume and a platform to share knowledge through blog posts.
 
 ## Tech Stack
-- Next.js (App Router)
-- TypeScript
-- React 18
-- Tailwind CSS
-- Geist UI
-- Vercel Analytics & Speed Insights
-- MDX untuk konten blog
+- **Frontend Framework**: Next.js (App Router)
+- **Styling**: Tailwind CSS with CSS Modules
+- **Type Safety**: TypeScript
+- **UI Components**: React 18
+- **Deployment**: Vercel
+- **Database**: Vercel Postgres (Neon)
+- **Email**: Resend
+- **Analytics**: Vercel Analytics
+- **Performance**: Vercel Speed Insights
 
 ## Project Conventions
 
 ### Code Style
-- Menggunakan TypeScript dengan konfigurasi ketat
-- Komponen React menggunakan functional components dengan TypeScript
-- Penamaan komponen menggunakan PascalCase
-- Hooks dan fungsi menggunakan camelCase
-- Menggunakan ESLint dan Prettier untuk konsistensi kode
+- TypeScript with strict mode enabled
+- Functional components with React Hooks
+- ESLint and Prettier for code formatting
+- Component files use PascalCase (e.g., `ProjectCard.tsx`)
+- Utility functions and hooks use camelCase
+- CSS Modules for component-scoped styling
 
 ### Architecture Patterns
-- Menggunakan App Router dari Next.js untuk routing
-- Komponen UI yang dapat digunakan kembali di folder `components/`
-- Halaman statis untuk performa optimal
-- Menggunakan Server Components untuk performa yang lebih baik
+- App Router for file-based routing
+- Server Components by default, Client Components when needed
+- Layout components for consistent page structures
+- Reusable UI components in `/app/components`
+- API routes in `/app/api`
+- Utility functions in `/app/lib`
 
 ### Testing Strategy
-- Pengujian komponen dengan React Testing Library
-- Pengujian integrasi untuk alur utama
-- Mengutamakan pengujian komponen kritis
+- Unit tests for utility functions and components
+- Integration tests for critical user flows
+- End-to-end tests for main features
+- Testing Library for React component testing
 
 ### Git Workflow
-- Menggunakan Git Flow untuk manajemen cabang
-- Format pesan commit: `type(scope): deskripsi`
-- Contoh: `feat(header): add responsive navigation`
-- Tipe commit: feat, fix, docs, style, refactor, test, chore
+- Feature branches for new features (`feature/feature-name`)
+- Pull requests for code review
+- Conventional Commits specification
+- Main branch protected, requires PR approval
+- Semantic versioning for releases
 
 ## Domain Context
-- Website ini berfokus pada portofolio pengembangan web
-- Menampilkan proyek, keterampilan, dan pengalaman profesional
-- Blog untuk berbagi pengetahuan dan tutorial
+- Personal branding and professional presentation
+- Technical blog content
+- Project showcase with case studies
+- Contact form for professional inquiries
+- Responsive design for all device sizes
 
 ## Important Constraints
-- Harus mobile-friendly dan aksesibel
-- Performa harus optimal (Lighthouse score tinggi)
-- Konten harus mudah diupdate
+- Performance optimization for fast loading
+- SEO best practices implementation
+- Accessibility (WCAG) compliance
+- Mobile-first responsive design
+- Security best practices for forms and API routes
 
 ## External Dependencies
-- Vercel untuk hosting dan deployment
-- Vercel Analytics untuk analitik
-- Vercel Speed Insights untuk monitoring performa
-- Geist UI untuk komponen antarmuka pengguna
+- **Vercel Platform** for hosting and deployment
+- **Neon** for PostgreSQL database
+- **Resend** for email functionality
+- **Geist** for typography
+- **Sugar High** for syntax highlighting
+- **next-mdx-remote** for MDX content rendering
