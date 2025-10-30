@@ -188,7 +188,7 @@ export default function MessageTable({ messages, onStatusUpdate, onDelete }: Mes
                 
                 <div>
                   <label className="block text-sm font-medium text-gray-700">User Agent</label>
-                  <p className="mt-1 text-sm text-gray-900 text-xs">
+                  <p className="mt-1 text-sm text-gray-900">
                     {selectedMessage.user_agent}
                   </p>
                 </div>

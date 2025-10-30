@@ -1,68 +1,70 @@
 # Project Context
 
 ## Purpose
-Personal portfolio website to showcase projects, blog posts, and professional information. The site serves as a digital resume and a platform to share knowledge through blog posts.
+Portfolio website pribadi yang menampilkan proyek, blog, dan informasi kontak. Website ini bertujuan untuk memamerkan karya dan pengalaman pengembangan web.
 
 ## Tech Stack
-- **Frontend Framework**: Next.js (App Router)
-- **Styling**: Tailwind CSS with CSS Modules
-- **Type Safety**: TypeScript
-- **UI Components**: React 18
+- **Framework**: Next.js 14 (App Router)
+- **Bahasa Pemrograman**: TypeScript
+- **Styling**: Tailwind CSS
+- **Autentikasi**: NextAuth.js
+- **Database**: PostgreSQL (via Vercel Postgres)
 - **Deployment**: Vercel
-- **Database**: Vercel Postgres (Neon)
-- **Email**: Resend
-- **Analytics**: Vercel Analytics
-- **Performance**: Vercel Speed Insights
+- **Lainnya**:
+  - React 18
+  - MDX untuk konten blog
+  - Resend untuk pengiriman email
 
 ## Project Conventions
 
 ### Code Style
-- TypeScript with strict mode enabled
-- Functional components with React Hooks
-- ESLint and Prettier for code formatting
-- Component files use PascalCase (e.g., `ProjectCard.tsx`)
-- Utility functions and hooks use camelCase
-- CSS Modules for component-scoped styling
+- Gunakan TypeScript untuk semua komponen dan fungsi
+- Gunakan ESLint dan Prettier untuk konsistensi kode
+- Nama komponen menggunakan PascalCase (contoh: `MessageTable.tsx`)
+- Nama file dan folder menggunakan kebab-case (contoh: `contact-form.tsx`)
+- Gunakan arrow functions untuk komponen React
 
 ### Architecture Patterns
-- App Router for file-based routing
-- Server Components by default, Client Components when needed
-- Layout components for consistent page structures
-- Reusable UI components in `/app/components`
-- API routes in `/app/api`
-- Utility functions in `/app/lib`
+- **App Router**: Menggunakan Next.js App Router untuk routing
+- **Server Components**: Memanfaatkan Server Components untuk performa yang lebih baik
+- **API Routes**: Menggunakan Route Handlers untuk API endpoints
+- **Layouts**: Menggunakan layout untuk tata letak yang konsisten
 
 ### Testing Strategy
-- Unit tests for utility functions and components
-- Integration tests for critical user flows
-- End-to-end tests for main features
-- Testing Library for React component testing
+- Pengujian komponen dengan React Testing Library
+- Pengujian integrasi untuk API routes
+- Pengujian end-to-end dengan Cypress (opsional)
 
 ### Git Workflow
-- Feature branches for new features (`feature/feature-name`)
-- Pull requests for code review
-- Conventional Commits specification
-- Main branch protected, requires PR approval
-- Semantic versioning for releases
+- **Branch Naming**: 
+  - `main` - branch produksi
+  - `develop` - pengembangan utama
+  - `feature/nama-fitur` - untuk fitur baru
+  - `fix/nama-perbaikan` - untuk perbaikan bug
+- **Commit Messages**: Menggunakan Conventional Commits
+  - `feat:` untuk fitur baru
+  - `fix:` untuk perbaikan bug
+  - `docs:` untuk perubahan dokumentasi
+  - `style:` untuk perubahan formatting
+  - `refactor:` untuk perubahan kode yang tidak memperbaiki bug atau menambah fitur
+  - `test:` untuk menambah atau memperbaiki test
 
 ## Domain Context
-- Personal branding and professional presentation
-- Technical blog content
-- Project showcase with case studies
-- Contact form for professional inquiries
-- Responsive design for all device sizes
+- Website ini memiliki beberapa bagian utama:
+  - Halaman Beranda: Menampilkan profil dan proyek terbaru
+  - Blog: Berisi artikel-artikel teknis
+  - Proyek: Daftar proyek yang telah dikerjakan
+  - Tentang: Informasi tentang pemilik website
+  - Kontak: Formulir untuk menghubungi pemilik website
 
 ## Important Constraints
-- Performance optimization for fast loading
-- SEO best practices implementation
-- Accessibility (WCAG) compliance
-- Mobile-first responsive design
-- Security best practices for forms and API routes
+- Harus responsif dan berfungsi dengan baik di perangkat mobile
+- Harus memiliki performa yang baik (skor Lighthouse yang tinggi)
+- Harus mengikuti praktik aksesibilitas web (WCAG)
 
 ## External Dependencies
-- **Vercel Platform** for hosting and deployment
-- **Neon** for PostgreSQL database
-- **Resend** for email functionality
-- **Geist** for typography
-- **Sugar High** for syntax highlighting
-- **next-mdx-remote** for MDX content rendering
+- **Vercel Postgres**: Untuk penyimpanan data
+- **Resend**: Untuk layanan pengiriman email
+- **NextAuth.js**: Untuk autentikasi
+- **MDX**: Untuk konten blog yang kaya
+- **Geist**: Font yang digunakan di website
