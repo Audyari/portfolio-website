@@ -13,7 +13,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
             <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-              Hi, I'm <span className="text-blue-600">Your Name</span>
+              Hi, I'm <span className="text-blue-600">Audyari Wiyono</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               A passionate web developer specializing in creating modern, 
