@@ -1,7 +1,7 @@
 // app/about/page.tsx
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import SkillBadge from '@/components/SkillBadge'
+import Header from '@/app/components/Header'
+import Footer from '@/app/components/footer'
+import SkillBadge from '@/app/components/SkillBadge'
 
 const experience = [
   {

@@ -1,7 +1,7 @@
 // app/projects/page.tsx
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import ProjectCard from '@/components/ProjectCard'
+import Header from '@/app/components/Header'
+import Footer from '@/app/components/footer'
+import ProjectCard from '@/app/components/ProjectCard'
 
 const allProjects = [
   {
