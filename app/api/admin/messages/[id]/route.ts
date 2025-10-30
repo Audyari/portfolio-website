@@ -11,7 +11,7 @@ function checkAuth(request: NextRequest) {
 // GET single message
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> } // ✅ Update: params sekarang Promise
 ) {
   try {
     // Check authentication
@@ -19,10 +19,11 @@ export async function GET(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
+    const { id } = await params // ✅ Await params
     const result = await sql`
       SELECT id, name, email, message, ip_address, user_agent, status, created_at
       FROM contact_messages 
-      WHERE id = ${params.id}
+      WHERE id = ${id}
     `
 
     if (result.rows.length === 0) {
@@ -42,7 +43,7 @@ export async function GET(
 // UPDATE message status
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> } // ✅ Update: params sekarang Promise
 ) {
   try {
     // Check authentication
@@ -50,6 +51,7 @@ export async function PATCH(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
+    const { id } = await params // ✅ Await params
     const { status } = await request.json()
 
     if (!status || !['new', 'read', 'replied', 'archived'].includes(status)) {
@@ -59,7 +61,7 @@ export async function PATCH(
     const result = await sql`
       UPDATE contact_messages 
       SET status = ${status}
-      WHERE id = ${params.id}
+      WHERE id = ${id}
       RETURNING id, name, email, message, ip_address, user_agent, status, created_at
     `
 
@@ -80,7 +82,7 @@ export async function PATCH(
 // DELETE message
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> } // ✅ Update: params sekarang Promise
 ) {
   try {
     // Check authentication
@@ -88,9 +90,10 @@ export async function DELETE(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
+    const { id } = await params // ✅ Await params
     const result = await sql`
       DELETE FROM contact_messages 
-      WHERE id = ${params.id}
+      WHERE id = ${id}
       RETURNING id
     `
 
