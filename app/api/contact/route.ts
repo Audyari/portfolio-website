@@ -4,7 +4,7 @@ import { headers } from 'next/headers';
 
 export async function POST(request: Request) {
   try {
-    const headersList = headers();
+    const headersList = await headers(); // TAMBAH 'await' di sini
     const body = await request.json();
 
     // Validasi
@@ -30,7 +30,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // Save to Vercel Postgres - SIMPLE SYNTAX
+    // Save to Vercel Postgres
     const result = await sql`
       INSERT INTO contact_messages (name, email, message, ip_address, user_agent)
       VALUES (${body.name}, ${body.email}, ${body.message}, ${headersList.get('x-forwarded-for')}, ${headersList.get('user-agent')})
