@@ -1,54 +1,58 @@
 // app/contact/page.tsx
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Header from '@/app/components/Header'
-import Footer from '@/app/components/footer'
+import { useState } from "react";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/footer";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    // Handle form submission here (e.g., send to API)
-    console.log('Form submitted:', formData)
-    setIsSubmitting(false)
-    
-    // Reset form
-    setFormData({ name: '', email: '', message: '' })
-    
-    // Show success message (you can replace this with a toast notification)
-    alert('Thank you for your message! I will get back to you soon.')
-  }
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+    // Simulate form submission
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // Handle form submission here (e.g., send to API)
+    console.log("Form submitted:", formData);
+    setIsSubmitting(false);
+
+    // Reset form
+    setFormData({ name: "", email: "", message: "" });
+
+    // Show success message (you can replace this with a toast notification)
+    alert("Thank you for your message! I will get back to you soon.");
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
-    }))
-  }
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       <main className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              Get In Touch
+            </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Have a project in mind or want to collaborate? 
-              I'd love to hear from you.
+              Have a project in mind or want to collaborate? I'd love to hear
+              from you.
             </p>
           </div>
 
@@ -57,7 +61,10 @@ export default function Contact() {
             <div className="lg:col-span-2">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Name
                   </label>
                   <input
@@ -73,7 +80,10 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Email
                   </label>
                   <input
@@ -89,7 +99,10 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Message
                   </label>
                   <textarea
@@ -109,7 +122,7 @@ export default function Contact() {
                   disabled={isSubmitting}
                   className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
@@ -117,19 +130,24 @@ export default function Contact() {
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact Information</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  Contact Information
+                </h3>
                 <div className="space-y-3">
                   <p className="text-gray-600">
                     <strong>Email:</strong> Audy123ari@gmail.com
                   </p>
                   <p className="text-gray-600">
-                    <strong>Location:</strong> Pondok Gede, Jawa Barat, Indonesia
+                    <strong>Location:</strong> Pondok Gede, Jawa Barat,
+                    Indonesia
                   </p>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Connect With Me</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  Connect With Me
+                </h3>
                 <div className="flex space-x-4">
                   <a
                     href="https://github.com/Audyari"
@@ -147,7 +165,6 @@ export default function Contact() {
                   >
                     LinkedIn
                   </a>
-                  
                 </div>
               </div>
             </div>
@@ -157,5 +174,5 @@ export default function Contact() {
 
       <Footer />
     </div>
-  )
+  );
 }

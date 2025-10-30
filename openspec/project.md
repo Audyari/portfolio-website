@@ -1,54 +1,59 @@
 # Project Context
 
 ## Purpose
-Membangun website portfolio pribadi yang menampilkan proyek-proyek, keterampilan, dan informasi kontak. Tujuannya adalah untuk memamerkan karya dan pengalaman profesional dalam format yang modern dan interaktif.
+Portofolio website pribadi yang menampilkan proyek, blog, dan informasi kontak. Dibangun dengan teknologi modern untuk performa dan pengalaman pengguna yang optimal.
 
 ## Tech Stack
 - Next.js (App Router)
 - TypeScript
 - React 18
 - Tailwind CSS
-- Geist Design System
-- Vercel Analytics & Speed Insights
+- MDX (untuk konten blog)
+- Vercel (deployment)
 
 ## Project Conventions
 
 ### Code Style
 - Gunakan TypeScript untuk type safety
-- Komponen React menggunakan functional components
-- Gunakan arrow functions untuk komponen
+- Komponen React menggunakan fungsi, bukan class
 - Nama komponen menggunakan PascalCase
 - Nama file komponen menggunakan PascalCase
 - Gunakan ESLint dan Prettier untuk konsistensi kode
+- Gunakan arrow functions untuk komponen
+- Gunakan interface untuk tipe props
 
 ### Architecture Patterns
 - App Router dari Next.js untuk routing
-- Komponen yang dapat digunakan kembali di folder `components/`
-- Halaman di dalam folder `app/`
-- Gunakan Server Components secara default, gunakan Client Components hanya jika diperlukan
+- Komponen yang dapat digunakan ulang di folder `components/`
+- Halaman statis untuk performa optimal
+- Server Components untuk komponen yang tidak membutuhkan interaktivitas
+- Client Components untuk komponen yang membutuhkan interaktivitas
 
 ### Testing Strategy
-- Belum diimplementasikan (akan menggunakan Jest dan React Testing Library)
+- Gunakan testing library untuk komponen React
+- Tes integrasi untuk halaman utama
+- End-to-end testing untuk alur kritis
 
 ### Git Workflow
-- Branch `main` untuk produksi
-- Buat branch fitur untuk pengembangan fitur baru (contoh: `feature/navbar`)
-- Gunakan Conventional Commits untuk pesan commit
-- Lakukan pull request untuk menggabungkan perubahan ke `main`
+- Gunakan Conventional Commits
+- Branch naming: `feature/nama-fitur`, `bugfix/nama-perbaikan`
+- Pull Request dengan deskripsi yang jelas
+- Code review sebelum merge ke main
 
 ## Domain Context
-- Website portfolio pribadi yang menampilkan:
-  - Halaman beranda dengan pengenalan singkat
-  - Daftar proyek yang telah dikerjakan
-  - Informasi kontak dan media sosial
-  - Blog pribadi (dalam pengembangan)
+- Website ini berfokus pada portofolio pribadi
+- Memiliki bagian blog untuk berbagi pengetahuan
+- Menampilkan proyek-proyek yang telah dikerjakan
+- Memiliki halaman kontak untuk kolaborasi
 
 ## Important Constraints
-- Performa website harus optimal (skor tinggi di Lighthouse)
-- Harus responsif di berbagai perangkat
-- Harus aksesibel (memenuhi standar WCAG)
+- Harus mobile-friendly
+- Performa harus optimal (scor tinggi di Lighthouse)
+- Aksesibilitas (a11y) harus diperhatikan
+- SEO friendly
 
 ## External Dependencies
-- Vercel untuk hosting dan deployment
-- Vercel Analytics untuk analisis pengunjung
-- Vercel Speed Insights untuk memantau performa
+- Vercel Analytics dan Speed Insights
+- Geist Font
+- Next.js MDX Remote untuk rendering konten MDX
+- Sugar High untuk syntax highlighting
